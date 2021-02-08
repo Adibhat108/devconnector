@@ -7,7 +7,9 @@ const Login = () => {
     password: '',
   });
 
-  const { name, email, password, password2 } = formData;
+  const {
+    email, password,
+  } = formData;
 
   const onchange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,12 +17,16 @@ const Login = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("SUCCESS");
+    console.log('SUCCESS');
   };
 
   return (
     <>
-      <p className="lead"><i className="fas fa-user"></i> Sign into Your Account</p>
+      <p className="lead">
+        <i className="fas fa-user" />
+        {' '}
+        Sign into Your Account
+      </p>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <input
@@ -46,10 +52,12 @@ const Login = () => {
         <input type="submit" className="btn btn-primary" value="Login" />
       </form>
       <p className="my-1">
-        Don't have an account? <Link to="/register">Sign Up</Link>
+        Don&apos;t have an account?
+        {' '}
+        <Link to="/register">Sign Up</Link>
       </p>
     </>
-  )
+  );
 };
 
 export default Login;

@@ -9,7 +9,9 @@ const Register = () => {
     password2: '',
   });
 
-  const { name, email, password, password2 } = formData;
+  const {
+    name, email, password, password2,
+  } = formData;
 
   const onchange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,13 +22,17 @@ const Register = () => {
     if (password !== password2) {
       console.log('Passwords do not match');
     } else {
-      console.log("SUCCESS");
+      console.log('SUCCESS');
     }
   };
 
   return (
     <>
-      <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
+      <p className="lead">
+        <i className="fas fa-user" />
+        {' '}
+        Create Your Account
+      </p>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <input
@@ -47,9 +53,10 @@ const Register = () => {
             value={email}
             required
           />
-          <small className="form-text"
-            >This site uses Gravatar so if you want a profile image, use a
-            Gravatar email</small
+          <small className="form-text">
+            This site uses Gravatar so if you want a profile image, use a
+            Gravatar email
+          </small
           >
         </div>
         <div className="form-group">
@@ -77,7 +84,9 @@ const Register = () => {
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
       <p className="my-1">
-        Already have an account? <Link to="/login">Sign In</Link>
+        Already have an account?
+        {' '}
+        <Link to="/login">Sign In</Link>
       </p>
     </>
   );
