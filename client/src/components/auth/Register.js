@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+// import { connect } from 'react-redux';
+// import { setAlert } from '../../actions/alert';
+import {
+  SET_ALERT,
+  // REMOVE_ALERT
+} from '../../actions/types';
 
 const Register = () => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,7 +28,14 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      console.log('Passwords do not match');
+      // props.setAlert('Passwords do not match', 'danger');
+      dispatch({
+        type: SET_ALERT,
+        payload: { msg: 'Passwords do not match', alertType: 'danger' },
+      });
+      // dispatch({
+
+      // });
     } else {
       console.log('SUCCESS');
     }
@@ -92,4 +107,8 @@ const Register = () => {
   );
 };
 
+// when using action, in order to use it, pass into connect.
+// connect takes in 2 parameters:
+// 1. any state you want to map,
+// 2. an object with any actions you want to use
 export default Register;
