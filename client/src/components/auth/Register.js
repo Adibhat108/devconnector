@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-// import { connect } from 'react-redux';
-// import { setAlert } from '../../actions/alert';
-import {
-  SET_ALERT,
-  // REMOVE_ALERT
-} from '../../actions/types';
+import setAlert from '../../actions/alert';
+import register from '../../actions/auth';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -28,16 +24,9 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      // props.setAlert('Passwords do not match', 'danger');
-      dispatch({
-        type: SET_ALERT,
-        payload: { msg: 'Passwords do not match', alertType: 'danger' },
-      });
-      // dispatch({
-
-      // });
+      dispatch(setAlert('Passwords do not match', 'danger'));
     } else {
-      console.log('SUCCESS');
+      dispatch(register({ name, email, password }));
     }
   };
 
@@ -56,7 +45,7 @@ const Register = () => {
             name="name"
             value={name}
             onChange={onchange}
-            required
+
           />
         </div>
         <div className="form-group">
@@ -66,7 +55,7 @@ const Register = () => {
             name="email"
             onChange={onchange}
             value={email}
-            required
+
           />
           <small className="form-text">
             This site uses Gravatar so if you want a profile image, use a
@@ -82,7 +71,7 @@ const Register = () => {
             minLength="6"
             onChange={onchange}
             value={password}
-            required
+
           />
         </div>
         <div className="form-group">
@@ -93,7 +82,7 @@ const Register = () => {
             minLength="6"
             onChange={onchange}
             value={password2}
-            required
+
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
