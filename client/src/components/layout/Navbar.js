@@ -7,11 +7,6 @@ import { logout } from '../../actions/auth';
 const NavBar = () => {
   const dispatch = useDispatch();
   const { isAuthenticated, loading } = useSelector((state) => state.auth);
-  useEffect(() => {
-    console.log('ddddddddddddddd');
-    console.log(isAuthenticated);
-    console.log(loading);
-  }, []);
   const authLinks = (
     <ul>
       <li>
