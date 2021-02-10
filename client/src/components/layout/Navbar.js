@@ -37,7 +37,7 @@ const NavBar = () => {
           DevConnector
         </Link>
       </h1>
-      {true && (isAuthenticated ? authLinks : guestLinks)}
+      {!loading && (isAuthenticated ? authLinks : guestLinks)}
     </nav>
   );
 };
