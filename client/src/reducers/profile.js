@@ -1,6 +1,5 @@
 import { CLEAR_PROFILE, GET_PROFILE, PROFILE_ERROR } from '../actions/types';
 
-/* eslint-disable no-empty */
 const initialState = {
   profile: null,
   profiles: [],

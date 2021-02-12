@@ -1,8 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 // import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+  // useDispatch,
+  useSelector,
+} from 'react-redux';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   // const dispatch = useDispatch();
