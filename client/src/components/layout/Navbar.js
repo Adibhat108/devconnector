@@ -6,6 +6,7 @@ import { logout } from '../../actions/auth';
 const NavBar = () => {
   const dispatch = useDispatch();
   const { isAuthenticated, loading } = useSelector((state) => state.auth);
+
   const authLinks = (
     <ul>
       <li>
@@ -35,6 +36,7 @@ const NavBar = () => {
       <li><Link to="/login">Login</Link></li>
     </ul>
   );
+
   return (
     <nav className="navbar bg-dark">
       <h1>
