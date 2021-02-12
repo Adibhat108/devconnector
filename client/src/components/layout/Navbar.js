@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { Fragment, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../actions/auth';
