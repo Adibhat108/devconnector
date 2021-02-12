@@ -1,6 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import {
+  // Link,
+  useHistory,
+} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { createProfile } from '../../actions/profile';
