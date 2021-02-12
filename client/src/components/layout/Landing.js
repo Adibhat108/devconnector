@@ -1,10 +1,12 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+  // useDispatch,
+  useSelector,
+} from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
 const Landing = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   if (isAuthenticated) {
