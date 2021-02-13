@@ -33,5 +33,8 @@ module.exports = {
     'react/no-array-index-key': 0,
     'react/jsx-props-no-spreading': 0,
     'import/prefer-default-export': 0,
+    'no-underscore-dangle': 0,
+    'react/forbid-prop-types': 0,
+
   },
 };
