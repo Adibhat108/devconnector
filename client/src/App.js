@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  // Switch
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Navbar from './components/layout/Navbar';
