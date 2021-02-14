@@ -64,7 +64,6 @@ export const createProfile = (formData, history, edit = false) => async (dispatc
 };
 
 // add experience
-
 export const addExperience = (formData, history) => async (dispatch) => {
   try {
     const config = {
