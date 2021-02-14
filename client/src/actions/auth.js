@@ -99,7 +99,6 @@ const login = (email, password) => async (dispatch) => {
 };
 
 // LOGOUT/Clear profile
-
 const logout = () => (dispatch) => {
   dispatch({
     type: CLEAR_PROFILE,
