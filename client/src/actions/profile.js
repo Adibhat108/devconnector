@@ -1,7 +1,10 @@
+/* eslint-disable no-alert */
 import axios from 'axios';
 import setAlert from './alert';
 
-import { GET_PROFILE, PROFILE_ERROR, UPDATE_PROFILE } from './types';
+import {
+  CLEAR_PROFILE, GET_PROFILE, PROFILE_ERROR, UPDATE_PROFILE, ACCOUNT_DELETED,
+} from './types';
 
 // get current users profile
 export const getCurrentUsersProfile = () => async (dispatch) => {
@@ -129,5 +132,72 @@ export const addEducation = (formData, history) => async (dispatch) => {
         status: err.response.status,
       },
     });
+  }
+};
+
+// delete experience
+export const deleteExperience = (id) => async (dispatch) => {
+  try {
+    const res = await axios.delete(`/api/profile/experience/${id}`);
+    dispatch({
+      type: UPDATE_PROFILE,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+      },
+    });
+    dispatch(setAlert('Experience Removed', 'success'));
+  }
+};
+
+// delete education
+export const deleteEducation = (id) => async (dispatch) => {
+  try {
+    const res = await axios.delete(`/api/profile/education/${id}`);
+    dispatch({
+      type: UPDATE_PROFILE,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+      },
+    });
+    dispatch(setAlert('Education Removed', 'success'));
+  }
+};
+
+// delete account and profile
+
+export const deleteAccount = () => async (dispatch) => {
+  if (window.confirm('Are you sure? This action can NOT be undone!')) {
+    try {
+      await axios.delete('/api/profile');
+      dispatch({
+        type: CLEAR_PROFILE,
+        // payload: res.data,
+      });
+      dispatch({
+        type: ACCOUNT_DELETED,
+        // payload: res.data,
+      });
+      dispatch(setAlert('Your account has been permanently deleted'));
+    } catch (err) {
+      dispatch({
+        type: CLEAR_PROFILE,
+        payload: {
+          msg: err.response.statusText,
+          status: err.response.status,
+        },
+      });
+    }
   }
 };
