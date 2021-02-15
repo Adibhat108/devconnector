@@ -101,8 +101,14 @@ const Register = () => {
   );
 };
 
-// when using action, in order to use it, pass into connect.
-// connect takes in 2 parameters:
-// 1. any state you want to map,
-// 2. an object with any actions you want to use
+/**
+ when using action, in order to use it, pass into connect.
+ connect takes in 2 parameters:
+ 1. any state you want to map,
+ 2. an object with any actions you want to use
+ or,
+ if you'd like to use an action,
+ just use the useDispatch and useSelector inbuilt hooks from redux and chill,
+ just like we've done here, projectwide
+ */
 export default Register;
