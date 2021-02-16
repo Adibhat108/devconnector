@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require('express-validator');
 const auth = require('../../middleware/auth');
 
 const Post = require('../../models/Post');
@@ -45,9 +45,11 @@ router.post('/', [auth, [
   }
 );
 
-// @route  GET api/posts
-// @desc   Get all posts
-// @access Private
+/**
+ * @route  GET api/posts
+ * @desc   Get all posts
+ * @access Private
+ */
 
 router.get('/', auth, async (req, res) => {
   try {
