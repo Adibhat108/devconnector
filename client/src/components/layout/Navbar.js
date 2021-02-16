@@ -10,6 +10,11 @@ const NavBar = () => {
   const authLinks = (
     <ul>
       <li>
+        <Link to="/profiles">
+          <span className="hide-sm">Developers</span>
+        </Link>
+      </li>
+      <li>
         <Link to="/dashboard">
           <i className="fas fa-user" />
           {' '}
@@ -28,7 +33,7 @@ const NavBar = () => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to="!#">
+        <Link to="/profiles">
           Developers
         </Link>
       </li>
