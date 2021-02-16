@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-alert */
 import axios from 'axios';
 import setAlert from './alert';
