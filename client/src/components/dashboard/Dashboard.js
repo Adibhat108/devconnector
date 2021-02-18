@@ -13,9 +13,11 @@ const Dashboard = () => {
   const { profile, loading } = useSelector((state) => state.profile);
   const { user } = useSelector((state) => state.auth);
 
-  useEffect(() => {
+  const onload = () => {
     dispatch(getCurrentUsersProfile());
-  }, []);
+  };
+
+  useEffect(onload, []);
 
   return loading && profile === null ? <Spinner /> : (
     <>
