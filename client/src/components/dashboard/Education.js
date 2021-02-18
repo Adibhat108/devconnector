@@ -17,7 +17,7 @@ const Education = ({ education }) => {
         {' '}
         {' '}
         {
-          edu.to === null ? ('Now') : <Moment format="YYYY/MM/DD">{edu.to}</Moment>
+          edu.to === null ? 'Now' : <Moment format="YYYY/MM/DD">{edu.to}</Moment>
         }
       </td>
       <td>
