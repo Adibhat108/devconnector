@@ -31,7 +31,7 @@ const PostItem = ({
           {' '}
           <Moment format="YYYY/MM/DD">{date}</Moment>
         </p>
-        <button type="button" className="btn btn-light" onClick={(e) => dispatch(addLike(_id))}>
+        <button type="button" className="btn btn-light" onClick={() => dispatch(addLike(_id))}>
           <i className="fas fa-thumbs-up" />
           {likes.length > 0 && (
           <span>
@@ -40,7 +40,7 @@ const PostItem = ({
           </span>
           )}
         </button>
-        <button type="button" className="btn btn-light" onClick={(e) => dispatch(removeLike(_id))}>
+        <button type="button" className="btn btn-light" onClick={() => dispatch(removeLike(_id))}>
           <i className="fas fa-thumbs-down" />
         </button>
         <Link to={`/post/${_id}`} className="btn btn-primary">
