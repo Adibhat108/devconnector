@@ -12,11 +12,6 @@ const PostItem = ({
 }) => {
   const dispatch = useDispatch();
   const { auth } = useSelector((state) => state);
-  useEffect(() => {
-    console.log({
-      _id, text, name, avatar, user, likes, comments, date,
-    });
-  }, [_id, text, name, avatar, user, likes, comments, date]);
 
   return (
     <div className="post bg-white p-1 my-1">
