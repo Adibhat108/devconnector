@@ -47,7 +47,7 @@ async (req, res) => {
     if (!user) {
       return res
         .status(400)
-        .json({ errors: [{ msg: 'Invalidjjj Credentials' }] });
+        .json({ errors: [{ msg: 'Invalid Credentials' }] });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
