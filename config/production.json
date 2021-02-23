@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://adithya123:adithya123@devconnector.ikpcp.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "mysecretToken",
+  "githubClientId": "7c87f2d06c283ec11574", 
+  "githubSecret": "826ddce72b2997af4044e1b8495ef1902c7785df"
+}
