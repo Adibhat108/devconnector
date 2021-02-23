@@ -59,22 +59,6 @@ const EditProfile = () => {
       youtube: loading || !profile.social ? '' : profile.social.youtube,
       instagram: loading || !profile.social ? '' : profile.social.instagram,
     });
-    // if (!loading) {
-    //   setFormData({
-    //     company: profile.company || '',
-    //     website: profile.website || '',
-    //     location: profile.location || '',
-    //     status: profile.status || '',
-    //     skills: profile.skills.join(', ') || '',
-    //     githubusername: profile.githubusername || '',
-    //     bio: profile.bio || '',
-    //     twitter: profile.social.twitter || '',
-    //     facebook: profile.social.facebook || '',
-    //     linkedin: profile.social.linkedin || '',
-    //     youtube: profile.social.youtube || '',
-    //     instagram: profile.social.instagram || '',
-    //   });
-    // }
   }, [loading]);
 
   const onChange = (e) => {
