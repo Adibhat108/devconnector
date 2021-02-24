@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { useDispatch, useSelector } from 'react-redux';
-// import PropTypes from 'prop-types';
 import { addLike, removeLike, deletePost } from '../../actions/post';
 
 const PostItem = ({
